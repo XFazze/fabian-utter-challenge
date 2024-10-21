@@ -2,13 +2,30 @@
 <title>Soloq Challenge</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 
+<!--<script type="text/javascript" src="/static/js/timer.js"></script>-->
+
 <div class="center full-height">
   <h1>BIG HYPE SOLOQ CHALLENGE</h1>
   <div class="players">
-    {% for player in players %}
+    {% for player in top_players %}
     <div class="center">
       <h3>{{ player["name"] }} {% if player["hotStreak"] %} on hot streak!{% endif %}</h3>
-      <a href="{{ player['opgg'] }}">{{ player["riot_name"] }}</a>
+      <a href="{{ player['opgg'] }}" target="_blank">{{ player["riot_name"] }}</a>
+      {% if player["tier"] %}
+      <p>{{ player["tier"] }} {{ player["rank"] }} - {{ player["leaguePoints"] }} LP</p>
+      <p>{{ player["wr"] }}% - {{ player["games"] }} games</p>
+      {% else %}
+      <p>Unranked</p>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+  <h1>Non-challenged</h1>
+  <div class="players">
+    {% for player in all_players %}
+    <div class="center">
+      <h3>{{ player["name"] }} {% if player["hotStreak"] %} on hot streak!{% endif %}</h3>
+      <a href="{{ player['opgg'] }}" target="_blank">{{ player["riot_name"] }}</a>
       {% if player["tier"] %}
       <p>{{ player["tier"] }} {{ player["rank"] }} - {{ player["leaguePoints"] }} LP</p>
       <p>{{ player["wr"] }}% - {{ player["games"] }} games</p>
