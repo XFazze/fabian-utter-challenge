@@ -45,8 +45,8 @@ def create_user(summonerId: str, name: str, riot_name: str, riot_tag: str):
 @app.route("/")
 def index():
     fabian_summonerId = "Sg9XI880vfFrXYfpBJaq2PxAeaoOaLO3sJh69NGPHv4JgjteqSRMNHeXGw"
-    # utter_summonerId = "CjlfRa9w4LMXs2HFaJmZN7z52-PSxlVd2eU13zTUt9jwpgVu"
-    utter_summonerId = "_tj833H4mvDeiajG95DpYoINt1jg0IXZBqQYmN6YAfBjFlYnTNujiRPtLA"
+    utter_summonerId = "CjlfRa9w4LMXs2HFaJmZN7z52-PSxlVd2eU13zTUt9jwpgVu"
+    #utter_summonerId = "_tj833H4mvDeiajG95DpYoINt1jg0IXZBqQYmN6YAfBjFlYnTNujiRPtLA"
 
     return render_template(
         "index.html",
