@@ -3,6 +3,7 @@ from flask import Flask, render_template
 from dotenv import load_dotenv
 from os import getenv
 from requests import get
+
 load_dotenv()
 
 # Initializing flask
@@ -68,7 +69,6 @@ def index():
             create_user(summoner_id["fabian"], "Fabian", "HAHAHA", "EUNEE"),
             create_user(summoner_id["noel"], "Utter", "utter THE butter", "EUW"),
         ],
-        challenge_time = datetime.date(year=2024, month=11, day=4)
         all_players=[
             create_user(summoner_id["noel"], "Noel", "im alright", "0000"),
             create_user(summoner_id["olof"], "Olof", "vG0Dv", "EUW"),
