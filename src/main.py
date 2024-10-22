@@ -50,7 +50,7 @@ def create_user(
 def index():
     summoner_id = {
         "fabian": "Sg9XI880vfFrXYfpBJaq2PxAeaoOaLO3sJh69NGPHv4JgjteqSRMNHeXGw",
-        "utter": "_tj833H4mvDeiajG95DpYoINt1jg0IXZBqQYmN6YAfBjFlYnTNujiRPtLA",
+        "utter": "CjlfRa9w4LMXs2HFaJmZN7z52-PSxlVd2eU13zTUt9jwpgVu",
         "noel": "z8OdNeGyWZ9ygC6OguFNsizZaSGhgxdg1giLqJeGkPWHPLvgDQhU20r5Dg",
         "olof": "8gv_pVLgDvmEGfLBnJUE554z3REvEkknBoTpqhe9wcVtmZhX",
         "ivorn": "0uoMgTHxBamOKxLCe8vWmwGxdyCmfGjYwZYJcRSyWmEwlbVkaxK6rB_N8A",
@@ -67,7 +67,7 @@ def index():
         "index.html",
         top_players=[
             create_user(summoner_id["fabian"], "Fabian", "HAHAHA", "EUNEE"),
-            create_user(summoner_id["noel"], "Utter", "utter THE butter", "EUW"),
+            create_user(summoner_id["utter"], "Utter", "utter THE butter", "EUW"),
         ],
         all_players=[
             create_user(summoner_id["noel"], "Noel", "im alright", "0000"),
