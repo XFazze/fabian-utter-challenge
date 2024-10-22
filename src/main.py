@@ -18,13 +18,13 @@ def create_user(
     api_url = f"https://{server}.api.riotgames.com/lol/league/v4/entries/by-summoner/{summonerId}?api_key={getenv('riot-token')}"
 
     rank_api = get(api_url)
-    # app.logger.debug(api_url)
+    app.logger.debug(api_url)
     res = {
         "name": name,
         "riot_name": f"{riot_name}#{riot_tag}",
         "opgg": f"https://www.op.gg/summoners/euw/{riot_name}-{riot_tag}",
     }
-    # app.logger.debug(rank_api.status_code)
+    app.logger.debug(rank_api.status_code)
     if rank_api.status_code == 200:
         for rank in rank_api.json():
 
@@ -58,7 +58,7 @@ def index():
         "nix": "AgN3PBU6E98Fl6Gw2vEPQx5Z6uirglao2lcaX-HAlFPEMtHu",
         "octo": "CFMnuiVGdtzmdeWkJK-fJRshV3II2FUXWamrHR-Sl6eEYcHU",
         "abbe": "rGhM39SwatdCI8MMlwlFNQJ3GGPnCPNxqq9WMlaIzdw4OlI",
-        "leo": "nmbjtla69-VM-0IVtbgJ6skxP6PDQZa_3imnDmNUfC9G-S0",
+        "leo": "QUOkbT32dzUusGF0IOgtc0any-sJBwDvj58zw9irDSV3zfN4jlaH2dtosA",
         "alex": "k7woLZsse5G2yMMecun2gtr00A5F0mhr8QCEdy-qO_WGTiE",
         "emser": "PSqliQsYNxzU5mEBVlgMKI4F5RGVgb1ls9Bs2kfw6K0L27s",
         "johanna": "lammjKiWJ_0BmUyLPlACs-ZXBH8VkjkB0FjuJE7y9kU1f5E",
@@ -66,7 +66,7 @@ def index():
     return render_template(
         "index.html",
         top_players=[
-            create_user(summoner_id["fabian"], "Fabian", "HAHAHA", "EUNEE"),
+            create_user(summoner_id["fabian"], "Fabian", "smile", "abv"),
             create_user(summoner_id["utter"], "Utter", "utter THE butter", "EUW"),
         ],
         all_players=[
@@ -79,7 +79,7 @@ def index():
             create_user(
                 summoner_id["abbe"], "Abbe", "Trockeltum", "0003", server="eun1"
             ),
-            create_user(summoner_id["leo"], "Leo", "Leo", "12333", server="eun1"),
+            create_user(summoner_id["leo"], "Leo", "krokodi mobil", "EUW"),
             create_user(
                 summoner_id["alex"], "Alex", "godslayerenryu", "EUNE", server="eun1"
             ),
