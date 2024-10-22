@@ -28,6 +28,7 @@ body {
   height: 100%;
   background: rgb(255, 215, 96);
   background: linear-gradient(90deg, rgba(255, 215, 96, 1) 15%, rgba(254, 244, 214, 1) 79%);
+  text-align: center;
 }
 .full-height {
   margin-top: 20vh;

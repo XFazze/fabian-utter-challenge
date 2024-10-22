@@ -62,6 +62,7 @@ def index():
         "alex": "k7woLZsse5G2yMMecun2gtr00A5F0mhr8QCEdy-qO_WGTiE",
         "emser": "PSqliQsYNxzU5mEBVlgMKI4F5RGVgb1ls9Bs2kfw6K0L27s",
         "johanna": "lammjKiWJ_0BmUyLPlACs-ZXBH8VkjkB0FjuJE7y9kU1f5E",
+        "maddie": "tFaCzzGBKeGZvTJ-IkQCISi_fzvA9W9meW_WznR1HxJUUjt4M3qwT7ZOdw",
     }
     return render_template(
         "index.html",
@@ -89,6 +90,7 @@ def index():
             create_user(
                 summoner_id["johanna"], "Johanna", "jechir", "EUNE", server="eun1"
             ),
+            create_user(summoner_id["maddie"], "Maddie", "TwoGirlsOneTeemo", "0000"),
         ],
     )
 
