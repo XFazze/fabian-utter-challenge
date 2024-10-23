@@ -48,49 +48,47 @@ def create_user(
 
 @app.route("/")
 def index():
-    summoner_id = {
-        "fabian": "Sg9XI880vfFrXYfpBJaq2PxAeaoOaLO3sJh69NGPHv4JgjteqSRMNHeXGw",
-        "utter": "CjlfRa9w4LMXs2HFaJmZN7z52-PSxlVd2eU13zTUt9jwpgVu",
-        "noel": "z8OdNeGyWZ9ygC6OguFNsizZaSGhgxdg1giLqJeGkPWHPLvgDQhU20r5Dg",
-        "olof": "8gv_pVLgDvmEGfLBnJUE554z3REvEkknBoTpqhe9wcVtmZhX",
-        "ivorn": "0uoMgTHxBamOKxLCe8vWmwGxdyCmfGjYwZYJcRSyWmEwlbVkaxK6rB_N8A",
-        "chris": "5tV5tzsUI9iako8U3OwGMbAXgfqwiBr9GvoaI3aCa0-zHEEX",
-        "nix": "AgN3PBU6E98Fl6Gw2vEPQx5Z6uirglao2lcaX-HAlFPEMtHu",
-        "octo": "CFMnuiVGdtzmdeWkJK-fJRshV3II2FUXWamrHR-Sl6eEYcHU",
-        "abbe": "rGhM39SwatdCI8MMlwlFNQJ3GGPnCPNxqq9WMlaIzdw4OlI",
-        "leo": "QUOkbT32dzUusGF0IOgtc0any-sJBwDvj58zw9irDSV3zfN4jlaH2dtosA",
-        "alex": "k7woLZsse5G2yMMecun2gtr00A5F0mhr8QCEdy-qO_WGTiE",
-        "emser": "PSqliQsYNxzU5mEBVlgMKI4F5RGVgb1ls9Bs2kfw6K0L27s",
-        "johanna": "lammjKiWJ_0BmUyLPlACs-ZXBH8VkjkB0FjuJE7y9kU1f5E",
-        "maddie": "tFaCzzGBKeGZvTJ-IkQCISi_fzvA9W9meW_WznR1HxJUUjt4M3qwT7ZOdw",
-    }
+    fabian= create_user("46dvXDw9AnOvX2DMT_KPBX6bLbzQSleAaz9N8HzOfq77QSwvQv0wuMZlfg", "Fabian", "smile", "abv")
+    utter = create_user("8gyVZAgG6WX-vlWDzDC9OL7225X4v1ojVp_3WBvllzDtlGRN", "Utter", "utter THE butter", "EUW")
+    tiers = ["IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM" "EMERALD", "DIAMOND"]
+    ranks = ["IIII", "III", "II", "I"]
+    if tiers.index(fabian["tier"]) > tiers.index(utter["tier"]):
+        leader="Fabian"
+    elif tiers.index(fabian["tier"]) < tiers.index(utter["tier"]):
+        leader="Utter"
+    else:
+        if ranks.index(fabian["rank"]) > ranks.index(utter["rank"]):
+            leader="Fabian"
+        elif ranks.index(fabian["rank"]) < ranks.index(utter["rank"]):
+            leader="Utter"
+        else:
+            leader="Abbe"
     return render_template(
         "index.html",
-        top_players=[
-            create_user(summoner_id["fabian"], "Fabian", "smile", "abv"),
-            create_user(summoner_id["utter"], "Utter", "utter THE butter", "EUW"),
-        ],
+        top_players=[fabian, utter],
+        leader=leader,
         all_players=[
-            create_user(summoner_id["noel"], "Noel", "im alright", "0000"),
-            create_user(summoner_id["olof"], "Olof", "vG0Dv", "EUW"),
-            create_user(summoner_id["ivorn"], "Ivorn", "ENJOYABLEGAME123", "SPIR"),
-            create_user(summoner_id["chris"], "Chris", "twice is mommy", "ff15"),
-            create_user(summoner_id["nix"], "Rasmus", "Ñix", "EUW"),
-            create_user(summoner_id["octo"], "Simon", "mimass", "EUW"),
+            create_user("96KBRzJFbDhz9ohTf-9oyFxPPbu7eQzC6MR8_3FXsD_EgFbnneIBaHiWRw", "Noel", "im alright", "0000"),
+            create_user("ZMqekpd_Vz2FqEjJv_k8HDYQ0kJw8Ge1y8FSgD-42ck1C7_s", "Olof", "vG0Dv", "EUW"),
+            create_user("1CYBGll9W0iE6AeAUX4LslgLHV2cxLj1VpmRP7LTiX5e2cpyJ1LkdQ9dRQ", "Ivorn", "ENJOYABLEGAME123", "SPIR"),
+            create_user("rGakeiLsBxijLA-6trktG_xgxDM1R9cQkNz2blNsw0YxEAKg", "Chris", "twice is mommy", "ff15"),
+            create_user("94r6TxbdgBHMQue8jUOyDhkp-h2TBIIZ9JSCFKEBm0-fgdED", "Rasmus", "Ñix", "EUW"),
+            create_user("GVDwScE54s3NBg12lnP_L6DQkfMLtvy3pWeS-dmrXvhEmhE0", "Simon", "mimass", "EUW"),
             create_user(
-                summoner_id["abbe"], "Abbe", "Trockeltum", "0003", server="eun1"
+                "bBsykldkThylOk5bIoz9KpRDpMXIvzQYPZV-MQxabouRz4s", "Abbe", "Trockeltum", "0003", server="eun1"
             ),
-            create_user(summoner_id["leo"], "Leo", "krokodi mobil", "EUW"),
+            create_user("ZGJASbYaYTPb0bai9k1KDD-4co8APgUJtZJv3sVCWXdIyqHrGtuK84rDzg", "Leo", "krokodil mobil", "EUW"),
             create_user(
-                summoner_id["alex"], "Alex", "godslayerenryu", "EUNE", server="eun1"
-            ),
-            create_user(
-                summoner_id["emser"], "Emelie", "notemser10", "8567", server="eun1"
+                "3k_jQlYfSjBhW4a7Aly9nxmgYdo5VicbUBe8rjM0oKXpCc0", "Alex", "godslayerenryu", "EUNE", server="eun1"
             ),
             create_user(
-                summoner_id["johanna"], "Johanna", "jechir", "EUNE", server="eun1"
+                "UVpPLaF5f7-g-Q52XaO8PG8g84bOInSt3EGag4-w7G0Ib4s", "Emelie", "notemser10", "8567", server="eun1"
             ),
-            create_user(summoner_id["maddie"], "Maddie", "TwoGirlsOneTeemo", "0000"),
+            create_user(
+                "LP-3QxijR2qsRVCknITKRb3QhwRrn8ufSD9s3c6ApM42yIw", "Johanna", "jechir", "EUNE", server="eun1"
+            ),
+            create_user("PaoeorEzZpEgeY1DyADI3eIbADRdsgvnUC3AVSyXdmRxXEjAgLng8GkSnQ", "Maddie", "TwoGirlsOneTeemo", "0000"),
+            create_user("fykH-mYEG7zCH5hW3Qvqs7TVDqBvnPYY8iey9ugWMULVBMHg", "Robin", "Búck", "EUW"),
         ],
     )
 

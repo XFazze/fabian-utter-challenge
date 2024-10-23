@@ -31,5 +31,8 @@ body {
   text-align: center;
 }
 .full-height {
-  margin-top: 20vh;
+  margin-top: 5vh;
+}
+.gold{
+  background: #ffdf00;
 }

@@ -8,7 +8,7 @@
   <h1>BIG HYPE SOLOQ CHALLENGE</h1>
   <div class="players">
     {% for player in top_players %}
-    <div class="center">
+    <div class="center {% if leader== player['name'] %}gold{% endif %}">
       <h3>{{ player["name"] }} {% if player["hotStreak"] %} on hot streak!{% endif %}</h3>
       <a href="{{ player['opgg'] }}" target="_blank">{{ player["riot_name"] }}</a>
       {% if player["tier"] %}
@@ -23,8 +23,8 @@
   <h1>Non-challenged</h1>
   <div class="players">
     {% for player in all_players %}
-    <div class="center">
-      <h3>{{ player["name"] }} {% if player["hotStreak"] %} on hot streak!{% endif %}</h3>
+    <div class="center {% if leader== player['name'] %}gold{% endif %}"">
+      <h3>{{ player[" name"] }} {% if player["hotStreak"] %} on hot streak!{% endif %}</h3>
       <a href="{{ player['opgg'] }}" target="_blank">{{ player["riot_name"] }}</a>
       {% if player["tier"] %}
       <p>{{ player["tier"] }} {{ player["rank"] }} - {{ player["leaguePoints"] }} LP</p>
