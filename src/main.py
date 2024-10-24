@@ -50,7 +50,7 @@ def create_user(
 def index():
     fabian= create_user("46dvXDw9AnOvX2DMT_KPBX6bLbzQSleAaz9N8HzOfq77QSwvQv0wuMZlfg", "Fabian", "smile", "abv")
     utter = create_user("8gyVZAgG6WX-vlWDzDC9OL7225X4v1ojVp_3WBvllzDtlGRN", "Utter", "utter THE butter", "EUW")
-    tiers = ["IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM" "EMERALD", "DIAMOND"]
+    tiers = ["IRON", "BRONZE", "SILVER", "GOLD", "PLATINUM", "EMERALD", "DIAMOND"]
     ranks = ["IIII", "III", "II", "I"]
     if tiers.index(fabian["tier"]) > tiers.index(utter["tier"]):
         leader="Fabian"
